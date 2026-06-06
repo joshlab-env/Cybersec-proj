@@ -12,11 +12,17 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.set("trust proxy", 1);
+
 app.use(
   session({
-    secret: "secure_session",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+    cookie: {
+      secure: false,
+      maxAge: 1000 * 60 * 60,
+    },
   })
 );
 
@@ -113,6 +119,8 @@ app.get("/logout", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server Running");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
 });
