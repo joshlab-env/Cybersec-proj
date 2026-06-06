@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+
+            <div class="logo">
+                <i class="fa-solid fa-user-shield"></i>
+                <h2>SecureAuth</h2>
+            </div>
+
+            <ul>
+                <li class="active">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-users"></i>
+                    Users
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-lock"></i>
+                    Security Logs
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-chart-line"></i>
+                    Reports
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </li>
+            </ul>
+
+            <button class="logout" onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+
+            <div class="header">
+
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, Administrator</p>
+                </div>
+
+                <div class="profile">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+            </div>
+
+            <!-- STATS -->
+            <div class="cards">
+
+                <div class="card">
+                    <i class="fa-solid fa-users"></i>
+                    <h3>125</h3>
+                    <p>Total Users</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-user-check"></i>
+                    <h3>103</h3>
+                    <p>Active Users</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>98%</h3>
+                    <p>Security Score</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>450</h3>
+                    <p>Logins Today</p>
+                </div>
+
+            </div>
+
+            <!-- RECENT ACTIVITY -->
+            <div class="activity">
+
+                <h2>
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Recent Activity
+                </h2>
+
+                <table>
+
+                    <tr>
+                        <th>User</th>
+                        <th>Action</th>
+                        <th>Status</th>
+                    </tr>
+
+                    <tr>
+                        <td>Joshua</td>
+                        <td>Login</td>
+                        <td class="success">Success</td>
+                    </tr>
+
+                    <tr>
+                        <td>Admin</td>
+                        <td>Password Change</td>
+                        <td class="success">Success</td>
+                    </tr>
+
+                    <tr>
+                        <td>Unknown User</td>
+                        <td>Login Attempt</td>
+                        <td class="danger">Failed</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+<script>
+    function logout() {
+        const confirmLogout = confirm(
+            "Are you sure you want to logout?"
+        );
+
+        if (confirmLogout) {
+            window.location.href = "/logout";
+        }
+    }
+</script>
+
+</body>
+
+</html>

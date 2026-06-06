@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+body {
+    background: #f4f5f9;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg,
+            #8d2560,
+            #c86ba2);
+
+    color: white;
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.logo i {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.logo h2 {
+    font-size: 24px;
+}
+
+.sidebar ul {
+    list-style: none;
+    flex: 1;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.sidebar ul li:hover,
+.sidebar ul .active {
+    background: rgba(255, 255, 255, .2);
+}
+
+.sidebar ul li i {
+    width: 30px;
+}
+
+.logout {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .2);
+    transition: .3s;
+}
+
+.logout:hover {
+    background: rgba(255, 255, 255, .3);
+}
+
+.logout i {
+    margin-right: 8px;
+}
+
+/* MAIN */
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #8d2560;
+}
+
+.profile {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(#d98ab4,
+            #a02b6f);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 24px;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+}
+
+.card i {
+    font-size: 35px;
+    color: #a02b6f;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 28px;
+    color: #333;
+}
+
+.card p {
+    color: #888;
+}
+
+/* ACTIVITY */
+
+.activity {
+    background: white;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+}
+
+.activity h2 {
+    color: #8d2560;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 15px;
+    background: #f8f8f8;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.success {
+    color: green;
+    font-weight: 600;
+}
+
+.danger {
+    color: red;
+    font-weight: 600;
+}
