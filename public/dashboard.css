@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #f4f5f9;
+    background: #eef3f8;
 }
 
 .dashboard {
@@ -19,8 +19,8 @@ body {
 .sidebar {
     width: 260px;
     background: linear-gradient(180deg,
-            #8d2560,
-            #c86ba2);
+                #0f172a,
+                #1e293b);
 
     color: white;
     padding: 30px 20px;
@@ -100,7 +100,7 @@ body {
 }
 
 .header h1 {
-    color: #8d2560;
+    color: #0f172a;
 }
 
 .profile {
@@ -135,7 +135,7 @@ body {
 
 .card i {
     font-size: 35px;
-    color: #a02b6f;
+    color: #2563eb;
     margin-bottom: 15px;
 }
 
@@ -187,4 +187,11 @@ td {
 .danger {
     color: red;
     font-weight: 600;
+}
+
+.logo span {
+    display: block;
+    font-size: 12px;
+    opacity: .8;
+    margin-top: 5px;
 }

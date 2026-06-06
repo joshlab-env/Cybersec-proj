@@ -17,32 +17,38 @@
         <div class="sidebar">
 
             <div class="logo">
-                <i class="fa-solid fa-user-shield"></i>
-                <h2>SecureAuth</h2>
+                <i class="fa-solid fa-shield-halved"></i>
+                <h2>CyberShield</h2>
+                <span>Security Awareness Portal</span>
             </div>
 
             <ul>
-                <li class="active">
-                    <i class="fa-solid fa-house"></i>
+                <li onclick="showSection('dashboard')" class="active">
+                    <i class="fa-solid fa-gauge-high"></i>
                     Dashboard
                 </li>
 
-                <li>
-                    <i class="fa-solid fa-users"></i>
-                    Users
+                <li onclick="showSection('threats')">
+                    <i class="fa-solid fa-shield-virus"></i>
+                    Threat Intelligence
                 </li>
 
-                <li>
-                    <i class="fa-solid fa-lock"></i>
-                    Security Logs
+                <li onclick="showSection('awareness')">
+                    <i class="fa-solid fa-user-shield"></i>
+                    Security Awareness
                 </li>
 
-                <li>
-                    <i class="fa-solid fa-chart-line"></i>
-                    Reports
+                <li onclick="showSection('vulnerabilities')">
+                    <i class="fa-solid fa-bug"></i>
+                    Vulnerabilities
                 </li>
 
-                <li>
+                <li onclick="showSection('news')">
+                    <i class="fa-solid fa-newspaper"></i>
+                    Security News
+                </li>
+
+                <li onclick="showSection('settings')">
                     <i class="fa-solid fa-gear"></i>
                     Settings
                 </li>
@@ -60,10 +66,10 @@
 
             <div class="header">
 
-                <div>
-                    <h1>Dashboard</h1>
-                    <p>Welcome back, Administrator</p>
-                </div>
+            <div>
+                <h1>CyberShield Security Dashboard</h1>
+                <p>Monitor threats, security awareness, and cyber risks.</p>
+            </div>
 
                 <div class="profile">
                     <i class="fa-solid fa-user"></i>
@@ -75,27 +81,27 @@
             <div class="cards">
 
                 <div class="card">
-                    <i class="fa-solid fa-users"></i>
-                    <h3>125</h3>
-                    <p>Total Users</p>
-                </div>
-
-                <div class="card">
-                    <i class="fa-solid fa-user-check"></i>
-                    <h3>103</h3>
-                    <p>Active Users</p>
-                </div>
-
-                <div class="card">
                     <i class="fa-solid fa-shield-halved"></i>
-                    <h3>98%</h3>
+                    <h3>95%</h3>
                     <p>Security Score</p>
                 </div>
 
                 <div class="card">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <h3>450</h3>
-                    <p>Logins Today</p>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <h3>12</h3>
+                    <p>Active Threat Alerts</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-user-check"></i>
+                    <h3>89%</h3>
+                    <p>Awareness Completion</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-bug"></i>
+                    <h3>4</h3>
+                    <p>Critical Vulnerabilities</p>
                 </div>
 
             </div>
@@ -104,38 +110,77 @@
             <div class="activity">
 
                 <h2>
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                    Recent Activity
+                    <i class="fa-solid fa-satellite-dish"></i>
+                    Recent Threat Intelligence
                 </h2>
 
                 <table>
 
                     <tr>
-                        <th>User</th>
-                        <th>Action</th>
+                        <th>Threat</th>
+                        <th>Severity</th>
                         <th>Status</th>
                     </tr>
 
                     <tr>
-                        <td>Joshua</td>
-                        <td>Login</td>
-                        <td class="success">Success</td>
+                        <td>Phishing Campaign</td>
+                        <td>High</td>
+                        <td class="danger">Active</td>
                     </tr>
 
                     <tr>
-                        <td>Admin</td>
-                        <td>Password Change</td>
-                        <td class="success">Success</td>
+                        <td>Ransomware Variant</td>
+                        <td>Critical</td>
+                        <td class="danger">Investigating</td>
                     </tr>
 
                     <tr>
-                        <td>Unknown User</td>
-                        <td>Login Attempt</td>
-                        <td class="danger">Failed</td>
+                        <td>Data Breach Alert</td>
+                        <td>Medium</td>
+                        <td class="success">Resolved</td>
+                    </tr>
+
+                    <tr>
+                        <td>Malware Signature Update</td>
+                        <td>Low</td>
+                        <td class="success">Patched</td>
                     </tr>
 
                 </table>
 
+            </div>
+
+            <div class="activity">
+            
+                <h2>
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Security Best Practices
+                </h2>
+            
+                <table>
+            
+                    <tr>
+                        <td>✔ Use passwords with at least 12 characters.</td>
+                    </tr>
+            
+                    <tr>
+                        <td>✔ Enable Multi-Factor Authentication (MFA).</td>
+                    </tr>
+            
+                    <tr>
+                        <td>✔ Never click suspicious email links.</td>
+                    </tr>
+            
+                    <tr>
+                        <td>✔ Keep operating systems and software updated.</td>
+                    </tr>
+            
+                    <tr>
+                        <td>✔ Avoid using public Wi-Fi without a VPN.</td>
+                    </tr>
+            
+                </table>
+            
             </div>
 
         </div>
@@ -152,6 +197,28 @@
         if (confirmLogout) {
             window.location.href = "/logout";
         }
+    }
+</script>
+
+<script>
+    function showSection(section) {
+
+        document.querySelector("h1").innerText =
+            section.charAt(0).toUpperCase() +
+            section.slice(1);
+
+        document.querySelectorAll(".sidebar li")
+            .forEach(li => li.classList.remove("active"));
+
+        event.currentTarget.classList.add("active");
+    }
+
+    function logout() {
+
+        if (confirm("Are you sure you want to logout?")) {
+            window.location.href = "/logout";
+        }
+
     }
 </script>
 
