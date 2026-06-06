@@ -55,22 +55,67 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 0 8%;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(rgba(15, 23, 42, 0.85),
+            rgba(15, 23, 42, 0.85)),
+        url("src/cyber-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.hero-content {
-    max-width: 600px;
+.hero-content,
+.hero-image {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
     font-size: 60px;
-    color: #1f2937;
+    color: white;
     margin-bottom: 20px;
 }
 
 .hero-content p {
     font-size: 18px;
-    color: #666;
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.7;
+}
+
+.hero-image {
+    font-size: 250px;
+    color: #d946ef;
+
+    filter:
+        drop-shadow(0 0 20px rgba(217, 70, 239, .4)) drop-shadow(0 0 40px rgba(217, 70, 239, .3));
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(141, 37, 96, 0.15);
+    border-radius: 50%;
+    top: -200px;
+    right: -150px;
+    filter: blur(50px);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(217, 70, 239, 0.15);
+    border-radius: 50%;
+    bottom: -150px;
+    left: -150px;
+    filter: blur(60px);
 }
 
 .hero-buttons {
