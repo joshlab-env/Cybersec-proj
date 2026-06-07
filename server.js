@@ -55,7 +55,7 @@ app.post("/register", async (req, res) => {
       [username, hash, salt]
     );
 
-    res.redirect("/login.html");
+    res.redirect("/login.html?success=registered");
   } catch (error) {
     console.log(error);
     res.redirect("/register.html?error=username");
