@@ -22,6 +22,9 @@
         <div class="right-panel">
             <div class="form-box">
 
+                <div id="error-message"></div>
+                <div id="success-message"></div>
+
                 <div class="icon">
                     <i class="fa-regular fa-user"></i>
                 </div>
@@ -57,8 +60,10 @@
     const params = new URLSearchParams(window.location.search);
 
     const error = params.get("error");
+    const success = params.get("success");
 
     const errorBox = document.getElementById("error-message");
+    const successBox = document.getElementById("success-message");
 
     if (error === "invalid") {
         errorBox.textContent =
@@ -70,6 +75,12 @@
         errorBox.textContent =
             "An unexpected error occurred.";
         errorBox.classList.add("show");
+    }
+
+    if (success === "registered") {
+        successBox.textContent =
+            "Registration successful! You can now log in.";
+        successBox.classList.add("show");
     }
 </script>
 
